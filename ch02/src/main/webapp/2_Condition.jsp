@@ -22,8 +22,7 @@
               int num4 = 4;
               
               if(num1 > 0){
-            	  out.println("<p>num1은 0보다 크다.</p>");
-            	  
+            	  out.println("<p>num1은 0보다 크다.</p>");            	  
               }
           
           

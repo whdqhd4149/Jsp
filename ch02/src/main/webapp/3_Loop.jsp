@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-     <head>
+	<head>
           <meta charset="UTF-8">
           <title>반복문</title>
           <%--
@@ -9,8 +9,8 @@
               이름 : 이종봉
               내용 : JSP 스크립트릿 반복문 실습  
            --%>
-     </head>
-     <body>
+    </head>
+    <body>
           <h3>반복문</h3>
           
           <h4>for</h4>
@@ -22,7 +22,7 @@
           
           <% for(int j=1 ; j<=5 ; j++){ %>
         	  <p>j : <%= j %></p>
-          <%} %>
+          <% } %>
                    
           <h4>while</h4>
           <%
@@ -45,5 +45,5 @@
           	 </tr>
         	 <% } %>         
           </table>
-     </body>
+    </body>
 </html>

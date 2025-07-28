@@ -5,7 +5,6 @@
 	String uid = request.getParameter("uid");
 	String name = request.getParameter("name");
 	String birth = request.getParameter("birth");
-
 %>
 
 <!DOCTYPE html>

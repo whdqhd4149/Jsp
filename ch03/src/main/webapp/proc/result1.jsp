@@ -5,7 +5,6 @@
 	String uid = request.getParameter("uid");
 	String name = request.getParameter("name");
 	String age = request.getParameter("age");
-
 %>
 
 <!DOCTYPE html>
@@ -21,8 +20,7 @@
 			쿼리스트링 : <%= queryString %><br/>
 			아이디 : <%= uid %><br/>
 			이름 : <%= name %><br/>
-			나이 : <%= age %><br/>
-			
+			나이 : <%= age %><br/>			
 		</p>
 		
 		<a href="../1_request.jsp">뒤로가기</a>	

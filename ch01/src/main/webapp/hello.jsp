@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-  <head>
+  	<head>
       <meta charset="UTF-8">
       <title>hello</title>
       <!-- 
@@ -9,13 +9,10 @@
            이름 : 이종봉
            내용 : 1장 JSP 개요와 개발환경 구축
        -->
-  </head>
-  <body>
-  
+  	</head>
+  	<body>
       <h3>1장 JSP개요와 개발환경 구축</h3>
       <p>Hello JSP!</p>
       <p>Hello World!</p>
-  
-
-  </body>
+  	</body>
 </html>
