@@ -3,19 +3,26 @@
 <%@page import="java.sql.Connection"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	// 전송 데이터 수신
-	String user_id = request.getParameter("user_id");
-
+	String name = request.getParameter("name");
+	String gender = request.getParameter("gender");
+	String age = request.getParameter("age");
+	String addr = request.getParameter("addr");
+	
 	String host = "jdbc:oracle:thin:@localhost:1521:xe";
 	String user = "whdqhd4149";
- 	String pass = "1234";
+	String pass = "1234";
 	
-	try{		
+	try{
 		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
 		Connection conn = DriverManager.getConnection(host, user, pass);
 		
-		PreparedStatement psmt = conn.prepareStatement("DELETE FROM USER1 WHERE USER_ID = ?");
-		psmt.setString(1, user_id);
+		String sql = "INSERT INTO USER5 VALUES (?,?,?,?)";
+		PreparedStatement psmt = conn.prepareStatement(sql);
+		psmt.setString(1, name);
+		psmt.setString(2, gender);
+		psmt.setString(3, age);
+		psmt.setString(4, addr);
 		
 		psmt.executeUpdate();
 		
@@ -25,5 +32,6 @@
 	}catch(Exception e){
 		e.printStackTrace();
 	}
-
+	
+	response.sendRedirect("../list.jsp");
 %>

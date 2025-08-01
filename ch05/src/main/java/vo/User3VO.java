@@ -36,8 +36,5 @@ public class User3VO {
 	public String toString() {
 		return "User3VO [user_id=" + user_id + ", name=" + name + ", hp=" + hp + ", age=" + age + "]";
 	}
-	
-	
-	
 
 }

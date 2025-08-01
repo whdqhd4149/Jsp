@@ -14,7 +14,6 @@
 	String user = "whdqhd4149";
 	String pass = "1234";
 	
-		
 	try{
 		// 드라이버 로드
 		Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -23,7 +22,7 @@
 		Connection conn = DriverManager.getConnection(host, user, pass);
 		
 		// SQL 실행 객체 생성
-		String sql = "INSERT INTO USER1 VALUES (?,?,?,?)";
+		String sql = "INSERT INTO USER3 VALUES (?, ?, ?, ?)";
 		PreparedStatement psmt = conn.prepareStatement(sql);
 		psmt.setString(1, user_id);
 		psmt.setString(2, name);
@@ -34,14 +33,33 @@
 		psmt.executeUpdate();
 		
 		// 데이터베이스 종료
-		psmt.close();
 		conn.close();
+		psmt.close();
 				
 	}catch(Exception e){
 		e.printStackTrace();
 	}
 	
-	// 목록이동
+	// 목록 이동
 	response.sendRedirect("../list.jsp");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 %>
