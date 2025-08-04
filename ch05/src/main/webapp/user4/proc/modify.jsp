@@ -18,7 +18,7 @@
 		
 		Statement stmt = conn.createStatement();
 		
-		String sql = "UPDATE USER5 SET gender='" + gender+ "', age=" + age + " , addr='" + addr + "'";
+		String sql = "UPDATE USER4 SET gender='" + gender+ "', age=" + age + " , addr='" + addr + "'";
 			sql += "WHERE name='" + name + "'";
 			
 		stmt.executeUpdate(sql);

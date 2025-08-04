@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>user1::register</title>
+		<title>user3::register</title>
 	</head>
 	<body>
 		<h3>User3 등록</h3>
