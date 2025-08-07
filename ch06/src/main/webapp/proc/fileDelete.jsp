@@ -34,7 +34,7 @@
 	    }
 	    
 	    String deleteSql = "DELETE FROM FILES WHERE no=?";
-	    PreparedStatement psmtDelete = conn.prepareStatement(sql);
+	    PreparedStatement psmtDelete = conn.prepareStatement(deletesql);
 	    psmtDelete.setString(1, no);
 	    
 	    psmtDelete.executeUpdate();

@@ -37,8 +37,7 @@ public class DBHelper {
 			stmt.close();
 		}
 		
-		
-		
+			
 		if(psmt !=null) {
 			psmt.close();			
 		}

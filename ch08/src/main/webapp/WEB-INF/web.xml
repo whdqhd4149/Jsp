@@ -15,7 +15,7 @@
   <!-- 서블릿 등록 -->
   <servlet>
   	<servlet-name>HelloServlet</servlet-name>
-  	<servlet-class>sub1.HelloServlet</servlet-class>
+  	<servlet-class>sub1.HelloServlet</servlet-class>  	
   </servlet>
   <servlet-mapping>
   	<servlet-name>HelloServlet</servlet-name>
@@ -24,36 +24,36 @@
   
   <servlet>
   	<servlet-name>WelcomeServlet</servlet-name>
-  	<servlet-class>sub1.WelcomeServlet</servlet-class>
+  	<servlet-class>sub1.WelcomeServlet</servlet-class>  	
   </servlet>
   <servlet-mapping>
   	<servlet-name>WelcomeServlet</servlet-name>
-  	<url-pattern>/Welcome.do</url-pattern>
+  	<url-pattern>/welcome.do</url-pattern>
   </servlet-mapping>
   
   <!-- 필터 등록 -->
   <filter>
   	<filter-name>FilterA</filter-name>
-  	<filter-class>sub2.FilterA</filter-class> 	
+  	<filter-class>sub2.FilterA</filter-class>
   </filter>
   <filter-mapping>
   	<filter-name>FilterA</filter-name>
-  	<url-pattern>/*</url-pattern> 
+  	<url-pattern>/*</url-pattern>
   </filter-mapping>
   
-   <filter>
+  <filter>
   	<filter-name>FilterB</filter-name>
-  	<filter-class>sub2.FilterB</filter-class> 	
+  	<filter-class>sub2.FilterB</filter-class>
   </filter>
   <filter-mapping>
   	<filter-name>FilterB</filter-name>
-  	<url-pattern>/hello.do</url-pattern> 
-  	<url-pattern>/welcome.do</url-pattern> 
+  	<url-pattern>/hello.do</url-pattern>
+  	<url-pattern>/welcome.do</url-pattern>
   </filter-mapping>
   
   <!-- 리스너 등록 -->
   <listener>
-  	<listner-class>sub3.MyContextListener</listner-class>
+  	<listener-class>sub3.MyContextListener</listener-class>
   </listener>
   
 </web-app>

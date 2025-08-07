@@ -33,6 +33,7 @@
 						<option>영문학과</option>
 						<option>일문학과</option>
 						<option>중문학과</option>
+						<option>컴공학과</option>
 						<option>통계학과</option>
 						<option>수학학과</option>					
 						</select>

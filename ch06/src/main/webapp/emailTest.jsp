@@ -34,7 +34,7 @@
 				</tr>
 				<tr>
 					<td>제목</td>
-					<td><input type="text" name="title" placeholder="제목 입력"/></td>								
+					<td><input type="text" name="title" placeholder="이메일 제목 입력"/></td>								
 				</tr>
 				<tr>
 					<td>내용</td>
