@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@page import="vo.User6VO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -84,3 +85,17 @@
 		</table>
 	</body>
 </html>
+=======
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
+>>>>>>> 79ece32404434d2674d069cc7aa4443c52e6117e

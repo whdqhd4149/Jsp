@@ -24,4 +24,6 @@
 	}catch(Exception e){
 		e.printStackTrace();
 	}
+	
+	response.sendRedirect("../list.jsp");
 %>

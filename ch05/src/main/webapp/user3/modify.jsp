@@ -31,6 +31,8 @@
 			user3.setAge(rs.getInt(4));
 			
 		}
+		
+		
 				
 	}catch(Exception e){
 		e.printStackTrace();
@@ -55,7 +57,7 @@
 			<table border="1">
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" name="user_id" readonly value="<%= user3.getUser_id() %> "placeholder="아이디 입력"/></td>				
+					<td><input type="text" name="user_id" readonly value="<%= user3.getUser_id() %>"placeholder="아이디 입력"/></td>				
 				</tr>
 				<tr>
 					<td>이름</td>
