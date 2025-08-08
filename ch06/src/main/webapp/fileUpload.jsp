@@ -26,7 +26,7 @@
 			 - 별도의 외부 라이브러리 필요없음
 			
 			WAS의 getPart 업로드 설정
-			 - Server > context.xml > context에 allowCasualMultipartParsing="true" 
+			 - Server > context.xml > context에 allowCasualMultipartParsing="true" 속성 선언
 			 - Server > server.xml > 63라인 Connector 태그에 maxPostSize="10485760" 속성 선언
 								
 		 --%>		

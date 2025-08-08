@@ -8,8 +8,13 @@
 	<body>
 		<h3>User1 수정</h3>
 		
+
 		<a href="/ch09">처음으로</a>
 		<a href="/ch09/user1/list.do">목록이동</a>
+
+		<a href="/cho09">처음으로</a>
+		<a href="/cho09/user1/list.do">목록이동</a>
+
 		
 		<form action="/ch09/user1/modify.do" method="post">
 			<table border="1">

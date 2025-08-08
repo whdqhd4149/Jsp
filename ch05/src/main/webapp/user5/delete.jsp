@@ -28,5 +28,5 @@
 		
 	}
 	
-	response.sendRedirect("../list.jsp");
+	response.sendRedirect("./list.jsp");
 %>

@@ -18,36 +18,30 @@ public class DBHelper {
 	protected Statement stmt = null;
 	protected ResultSet rs = null;
 	
-	public Connection getConnection(String dbcp) throws NamingException, SQLException {
-		
+	public Connection getConnection(String dbcp) throws NamingException, SQLException {		
 		Context ctx = (Context) new InitialContext().lookup("java:comp/env");
-		DataSource ds = (DataSource) ctx.lookup(dbcp);
-		return ds.getConnection();
-		
+		DataSource ds = (DataSource) ctx.lookup(dbcp);		
+		return ds.getConnection();		
 	}
-
+	
 	public void closeAll() throws SQLException {
 		
-		if(rs !=null) {
+		if(rs != null) {
 			rs.close();
 		}
 		
-		
-		if(stmt !=null) {
+		if(stmt != null) {
 			stmt.close();
+		}		
+		
+		if(psmt != null) {
+			psmt.close();
 		}
 		
-		
-		
-		if(psmt !=null) {
-			psmt.close();			
-		}
-		
-		
-		if(conn !=null) {
-			conn.close();			
-		}
-		
+		if(conn != null) {
+			conn.close();
+		}		
 	}
 	
+
 }

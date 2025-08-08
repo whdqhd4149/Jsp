@@ -29,7 +29,7 @@ public enum StudentService {
 		dao.updateStudent(dto);
 	}
 	
-	public void delet(String stdNo) {
+	public void delete(String stdNo) {
 		dao.deleteStudent(stdNo);
 	}
 

@@ -28,7 +28,7 @@
 		
 		@Override
 		protected javax.mail.PasswordAuthentication getPasswordAuthentication(){
-			
+			String secret = "taahnocovyilwnbn";
 			return new PasswordAuthentication(sender, secret);
 		}
 		
@@ -42,10 +42,11 @@
 	message.setFrom(new InternetAddress(sender, "보내는사람", "UTF-8"));
 	message.addRecipient(Message.RecipientType.TO, new InternetAddress(receiver));
 	message.setSubject(title);
-	message.setContent(content,"text/html;charset=UTF-8" );
+	message.setContent(content,"text/html;charset=UTF-8");
 	
 	// 메일 발송
 	Transport.send(message);
+	
 	}catch(Exception e){
 		e.printStackTrace();
 	}

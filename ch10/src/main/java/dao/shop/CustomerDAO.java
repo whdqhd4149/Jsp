@@ -45,7 +45,7 @@ public class CustomerDAO extends DBHelper{
 		}		
 	}
 		
-	public CustomerDTO selectCustomer(String cid) {
+	public CustomerDTO selectCustomer(String cid){
 		
 		CustomerDTO dto = null;
 		
@@ -72,8 +72,9 @@ public class CustomerDAO extends DBHelper{
 			//e.printStackTrace();
 			logger.error(e.getMessage());
 		}
-			
+		
 		return dto;
+		
 	}
 		
 	public List<CustomerDTO> selectAllCustomer() {

@@ -39,11 +39,6 @@
 		e.printStackTrace();
 	}
 %>
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 	<head>
