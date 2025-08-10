@@ -19,6 +19,7 @@ public class User3Service {
 	// dao 싱글톤 객체 가져오기
 	private User3DAO dao = User3DAO.getInstance();
 	
+	// DAO 메서드 호출 - Service에 맞게 네이밍
 	public void register(User3DTO dto) {
 		dao.insertUser3(dto);		
 	}	
@@ -35,5 +36,4 @@ public class User3Service {
 		dao.deleteUser3(user_id);
 	}
 	
-
 }
