@@ -9,23 +9,23 @@ import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.naming.ldap.InitialLdapContext;
 import javax.sql.DataSource;
 
-import dto.User1DTO;
+import dto.User3DTO;
 
-// DAO(Data Access Object) : DB 처리를 수행하는 객체
-public class User1DAO {
+public class User3DAO {
 	
-	// DAO는 기본 싱글톤
-	private final static User1DAO INSTANCE = new User1DAO();
+	private final static User3DAO INSTANCE = new User3DAO();
 	
-	public static User1DAO getInstance() {
-		return INSTANCE;
+	public static User3DAO getInstance() {
+		
+		return INSTANCE;		
 	}
-	private User1DAO() {}
+	private User3DAO() {}
 	
-	// 기본 CRUD 메서드
-	public void insertUser1(User1DTO dto) {
+	
+	public void insertUser3(User3DTO dto) {
 		
 		try {
 			Context ctx = (Context) new InitialContext().lookup("java:comp/env");
@@ -33,7 +33,7 @@ public class User1DAO {
 			
 			Connection conn = ds.getConnection();
 			
-			String sql = "INSERT INTO USER1 VALUES (?,?,?,?)";
+			String sql = "INSERT INTO USER3 VALUES (?,?,?,?)";
 			PreparedStatement psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getUser_id());
 			psmt.setString(2, dto.getName());
@@ -44,16 +44,15 @@ public class User1DAO {
 			
 			psmt.close();
 			conn.close();
-					
-		}catch(Exception e) {
+			
+		}catch (Exception e) {
 			e.printStackTrace();
-		}
-		
-		
+		}		
 	}
-	public User1DTO selectUser1(String user_id) {
+	
+	public User3DTO selectUser3(String user_id) {
 		
-		User1DTO dto = null;
+		User3DTO dto = null;
 		
 		try {
 			Context ctx = (Context) new InitialContext().lookup("java:comp/env");
@@ -61,26 +60,24 @@ public class User1DAO {
 			
 			Connection conn = ds.getConnection();
 			
-			String sql = "SELECT * FROM USER1 WHERE user_id=?";
+			String sql = "SELECT * FROM USER3 WHERE user_id=?";
 			PreparedStatement psmt = conn.prepareStatement(sql);
 			psmt.setString(1, user_id);
 			
 			ResultSet rs = psmt.executeQuery();
 			
-			
 			if(rs.next()) {
-				dto = new User1DTO();
+				dto = new User3DTO();
 				dto.setUser_id(rs.getString(1));
 				dto.setName(rs.getString(2));
 				dto.setHp(rs.getString(3));
-				dto.setAge(rs.getInt(4));				
+				dto.setAge(rs.getInt(4));			
 			}
-						
 			rs.close();
 			psmt.close();
 			conn.close();
-					
-		}catch(Exception e) {
+									
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		
@@ -88,9 +85,9 @@ public class User1DAO {
 		
 	}
 	
-	public List<User1DTO> selectAllUser1(){
+	public List<User3DTO> selectAllUser3(){
 		
-		List<User1DTO> dtoList = new ArrayList<>();
+		List<User3DTO> dtoList = new ArrayList<>();
 		
 		try {
 			Context ctx = (Context) new InitialContext().lookup("java:comp/env");
@@ -100,38 +97,38 @@ public class User1DAO {
 			
 			Statement stmt = conn.createStatement();
 			
-			String sql = "SELECT * FROM USER1";
+			String sql = "SELECT * FROM USER3";
 			ResultSet rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
-				User1DTO dto = new User1DTO();
+				User3DTO dto = new User3DTO();
 				dto.setUser_id(rs.getString(1));
 				dto.setName(rs.getString(2));
 				dto.setHp(rs.getString(3));
 				dto.setAge(rs.getInt(4));
 				
-				dtoList.add(dto);				
+				dtoList.add(dto);								
 			}
-			
 			rs.close();
 			stmt.close();
-			conn.close();			
-		}catch(Exception e) {
+			conn.close();
+					
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
+		return dtoList;
 		
-		return dtoList;		
 	}
 	
-	public void updateUser1(User1DTO dto) {
+	public void updateUser3(User3DTO dto) {
 		
 		try {
-			Context ctx = (Context) new InitialContext().lookup("java:comp/env");
+			Context ctx = (Context) new InitialLdapContext().lookup("java:comp/env");
 			DataSource ds = (DataSource) ctx.lookup("jdbc/whdqhd4149");
 			
 			Connection conn = ds.getConnection();
 			
-			String sql = "UPDATE USER1 SET name=?, hp=?, age=? WHERE user_id=?";
+			String sql = "UPDATE USER3 SET name=?, hp=?, age=?, WHERE user_id=?";
 			PreparedStatement psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getName());
 			psmt.setString(2, dto.getHp());
@@ -143,29 +140,31 @@ public class User1DAO {
 			psmt.close();
 			conn.close();
 						
-		}catch(Exception e) {
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
-		public void deleteUser1(String user_id) {
+	
+	public void deleteUser3(String user_id) {
+		
+		try {
+			Context ctx = (Context) new InitialContext().lookup("java:comp/env");
+			DataSource ds = (DataSource) ctx.lookup("jdbc/whdqhd4149");
 			
-			try {
-				Context ctx = (Context) new InitialContext().lookup("java:comp/env");
-				DataSource ds = (DataSource) ctx.lookup("jdbc/whdqhd4149");
-				
-				Connection conn =ds.getConnection();
-				
-				String sql = "DELETE FROM USER1 WHERE user_id=?";
-				PreparedStatement psmt = conn.prepareStatement(sql);
-				psmt.setString(1, user_id);
-				
-				psmt.executeUpdate();
-				
-				psmt.close();
-				conn.close();
-				
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-		}	
+			Connection conn = ds.getConnection();
+			
+			String sql = "DELETE FROM USER3 WHERE user_id=?";
+			PreparedStatement psmt = conn.prepareStatement(sql);
+			psmt.setString(1, user_id);
+			
+			psmt.executeUpdate();
+			
+			psmt.close();
+			conn.close();
+						
+		}catch (Exception e) {
+			e.printStackTrace();
+		}		
+	}
 }

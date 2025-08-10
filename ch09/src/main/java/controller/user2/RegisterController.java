@@ -1,9 +1,9 @@
 package controller.user2;
 
 import java.io.IOException;
-import java.net.ResponseCache;
 
-import dao.User2DAO;
+
+
 import dto.User2DTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -19,7 +19,7 @@ public class RegisterController extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
 	// 싱글톤 객체 가져오기
-	private User2Service service = User2Service.getInsance();
+	private User2Service service = User2Service.getInstance();
 	
 	
 	@Override

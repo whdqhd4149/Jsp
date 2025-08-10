@@ -1,23 +1,20 @@
-package controller.user1;
+package controller.user3;
 
 import java.io.IOException;
-
-
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import service.User1Service;
+import service.User3Service;
 
-@WebServlet("/user1/delete.do")
+@WebServlet("/user3/delete.do")
 public class DeleteController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 	
-	
-	private User1Service service = User1Service.getInstance();
+	private User3Service service = User3Service.getInstance();
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,18 +22,16 @@ public class DeleteController extends HttpServlet{
 		// 전송 데이터 수신
 		String user_id = req.getParameter("user_id");
 		
-		// 서비스 요청
+		// 서비스 요청\
 		service.delete(user_id);
 		
 		// 이동
-		resp.sendRedirect("/ch09/user1/list.do");
-				
+		resp.sendRedirect("/ch09/user3/list.do");
 	}
-	
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-				
-	}		
+	}
+
 }

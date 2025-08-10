@@ -9,7 +9,7 @@ public class User2Service {
 	
 	// 싱글톤
 	private static User2Service instance = new User2Service();
-	public static User2Service getInsance() {
+	public static User2Service getInstance() {
 		return instance;		
 	}
 	private User2Service() {}
