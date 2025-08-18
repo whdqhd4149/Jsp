@@ -25,7 +25,7 @@
 		String sql = "UPDATE USER2 SET name='" + name + "', hp='" + hp + "', age=" + age + " ";
 			sql += "WHERE user_id='" + user_id + "'";
 			
-		stmt.executeQuery(sql);
+		stmt.executeUpdate(sql);
 		
 		stmt.close();
 		conn.close();

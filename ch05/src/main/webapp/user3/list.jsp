@@ -68,7 +68,7 @@
 				<td><%= user3VO.getAge() %></td>
 				<td>
 				
-				<a href="./modrfy.jsp?user_id=<%= user3VO.getUser_id()%>">수정</a>
+				<a href="./modify.jsp?user_id=<%= user3VO.getUser_id()%>">수정</a>
 				<a href="./delete.jsp?user_id=<%= user3VO.getUser_id()%>">삭제</a>
 				
 				</td>					

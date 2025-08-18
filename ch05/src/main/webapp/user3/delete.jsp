@@ -25,5 +25,7 @@
 		e.printStackTrace();
 	}
 	
-	response.sendRedirect("../list.jsp");
+	// 목록이동
+	response.sendRedirect("./list.jsp");
+	
 %>

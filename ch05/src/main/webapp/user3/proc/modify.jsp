@@ -22,7 +22,7 @@
 		
 		Statement stmt = conn.createStatement();
 		
-		String sql = "UPDATE USER3 SET name'" + name + "', hp='" + hp + "', age=" + age + " ";
+		String sql = "UPDATE USER3 SET name='" + name + "', hp='" + hp + "', age=" + age + " ";
 				sql += "WHERE user_id='" + user_id + "'";
 				
 		stmt.executeUpdate(sql);

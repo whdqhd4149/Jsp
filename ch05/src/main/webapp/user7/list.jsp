@@ -23,12 +23,12 @@
 		String sql = "SELECT * FROM USER7";
 		ResultSet rs = stmt.executeQuery(sql);
 		
-		System.out.println(rs);
+		
 		
 		while(rs.next()){
 			
 			User7VO vo = new User7VO();
-			vo.setId(rs.getString(1));
+			vo.setId(rs.getInt(1));
 			vo.setName(rs.getString(2));
 			vo.setAge(rs.getInt(3));
 			vo.setEmail(rs.getString(4));
@@ -37,7 +37,7 @@
 		
 		}
 		
-		System.out.println(users);
+		
 		
 		rs.close();
 		stmt.close();
@@ -65,6 +65,8 @@
 				<th>이름</th>
 				<th>나이</th>
 				<th>이메일</th>
+				<th>관리</th>
+				
 			</tr>
 			
 			<% for(User7VO user7VO : users){ %>
@@ -75,9 +77,9 @@
 				<td><%= user7VO.getAge() %></td>
 				<td><%= user7VO.getEmail() %></td>
 				<td>
-					<a href="./modify.jsp?id=<%= user7VO.getName() %>">수정</a>
+					<a href="./modify.jsp?id=<%= user7VO.getId() %>">수정</a>
 					
-					<a href="./delete.jsp?id=<%= user7VO.getName() %>">삭제</a>					
+					<a href="./delete.jsp?id=<%= user7VO.getId() %>">삭제</a>					
 				</td>			
 			</tr>
 			<% } %>

@@ -31,6 +31,9 @@
 			user3.setAge(rs.getInt(4));
 			
 		}
+		rs.close();
+		psmt.close();
+		conn.close();
 		
 		
 				

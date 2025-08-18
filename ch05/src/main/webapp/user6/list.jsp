@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%@page import="vo.User6VO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -20,24 +19,25 @@
 		
 		Statement stmt = conn.createStatement();
 		
-		String sql = "SELECT * FROM USER6";
+		String sql = "SELECT seq, name, gender, age, addr FROM USER6";
 		ResultSet rs = stmt.executeQuery(sql);
 		
-		System.out.println(rs);
+		
 		
 		while(rs.next()){
 			
 			User6VO vo = new User6VO();
-			vo.setName(rs.getString(1));
-			vo.setGender(rs.getString(2));
-			vo.setAge(rs.getInt(3));
-			vo.setAddr(rs.getString(4));
+			vo.setSeq(rs.getInt(1));
+			vo.setName(rs.getString(2));
+			vo.setGender(rs.getString(3));
+			vo.setAge(rs.getInt(4));
+			vo.setAddr(rs.getString(5));
 			
 			users.add(vo);
 			
 		}
 		
-		System.out.println(users);
+		
 		
 		rs.close();
 		stmt.close();
@@ -63,21 +63,24 @@
 		
 		<table border="1">
 			<tr>
+				<th>SEQ</th>
 				<th>이름</th>
 				<th>성별</th>
 				<th>나이</th>
-				<th>주소</th>			
+				<th>주소</th>
+				<th>관리</th>			
 			</tr>
-			<% for(User6VO user6VOasd : users){ %>
+			<% for(User6VO user6VO : users){ %>
 			<tr>
+				<td><%= user6VO.getSeq() %></td>
 				<td><%= user6VO.getName() %></td>
 				<td><%= user6VO.getGender() %></td>
 				<td><%= user6VO.getAge() %></td>
 				<td><%= user6VO.getAddr() %></td>
 				<td>
-					<a href="./modify.jsp?name=<%= user6VO.getName() %>">수정</a>
+					<a href="./modify.jsp?seq=<%= user6VO.getSeq() %>">수정</a>
 					 
-					<a href="./delete.jsp?name=<%= user6VO.getName() %>">삭제</a>
+					<a href="./delete.jsp?seq=<%= user6VO.getSeq() %>">삭제</a>
 				
 				</td>						
 			</tr>
@@ -85,17 +88,4 @@
 		</table>
 	</body>
 </html>
-=======
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 
-</body>
-</html>
->>>>>>> 79ece32404434d2674d069cc7aa4443c52e6117e

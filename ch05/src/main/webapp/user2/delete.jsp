@@ -27,4 +27,7 @@
 	}catch(Exception e){
 		e.printStackTrace();
 	}
+	
+	// 목록이동
+	response.sendRedirect("./list.jsp");
 %>

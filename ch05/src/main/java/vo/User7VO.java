@@ -2,15 +2,14 @@ package vo;
 
 public class User7VO {
 	
-	private String id;
+	private int id;
 	private String name;
 	private int age;
 	private String email;
-	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -31,10 +30,11 @@ public class User7VO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 	@Override
 	public String toString() {
 		return "User7VO [id=" + id + ", name=" + name + ", age=" + age + ", email=" + email + "]";
-	}	
+	}
+	
+	
 }	
 	

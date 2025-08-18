@@ -6,6 +6,16 @@ public class User6VO {
 	private String gender;
 	private int age;
 	private String addr;
+	private int seq;
+	
+	
+	
+	public int getSeq() {
+		return seq;
+	}
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
 	
 	public String getName() {
 		return name;
@@ -36,4 +46,10 @@ public class User6VO {
 	public String toString() {
 		return "User6VO [name=" + name + ", gender=" + gender + ", age=" + age + ", addr=" + addr + "]";
 	}
+	
+	
+	
+	
+	
+
 }

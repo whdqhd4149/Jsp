@@ -16,7 +16,7 @@
 	String user = "whdqhd4149";
 	String pass = "1234";
 
-	User7VO user7 = nulldfdf;
+	User7VO user7 = null;
 	
 	try{
 		Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -30,7 +30,7 @@
 		
 		if(rs.next()){
 			user7 = new User7VO();
-			user7.setId(rs.getNString(1));
+			user7.setId(rs.getInt(1));
 			user7.setName(rs.getNString(2));
 			user7.setAge(rs.getInt(3));
 			user7.setEmail(rs.getString(4));
@@ -62,7 +62,7 @@
 			<table border="1">
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" name="id" readonly value="<%= user7.getId() %>" placeholder="아이디 입력"/></td>
+					<td><input type="number" name="id" readonly value="<%= user7.getId() %>" placeholder="아이디 입력"/></td>
 				</tr>
 				<tr>
 					<td>이름</td>
@@ -78,7 +78,7 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="right">
-						<input type="text" value="수정하기"/>						
+						<input type="submit" value="수정하기"/>						
 					</td>
 				
 				</tr>

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
@@ -18,9 +17,9 @@
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection conn = DriverManager.getConnection(host, user, pass);
 		
-		String sql = "SELECT * FROM USER6 WHERE NAME=?";
+		String sql = "SELECT SEQ, NAME, GENDER, AGE, ADDR FROM USER6 WHERE SEQ=?";
 		PreparedStatement psmt = conn.prepareStatement(sql);
-		psmt.setString(1, name);
+		psmt.setString(1, "seq");
 		
 		ResultSet rs = psmt.executeQuery();
 		
@@ -29,7 +28,9 @@
 			user6.setName(rs.getString(1));
 			user6.setGender(rs.getString(2));
 			user6.setAge(rs.getInt(3));
-			user6.setAddr(rs.getString(4));			
+			user6.setAddr(rs.getString(4));
+			user6.setSeq(rs.getInt(5));
+		
 		}
 		
 		rs.close();
@@ -55,10 +56,12 @@
 		<a href="./list.jsp">목록이동</a>
 		
 		<form action="./proc/modify.jsp" method="post">
+			<input type="hidden" name="seq" value="<%= user6.getSeq()%>"/>
 			<table border="1">
+			
 				<tr>
 					<td>이름</td>
-					<td><input type="text" name="name" readonly value="<%= user6.getName() %>" placeholder="이름 입력"/></td>
+					<td><input type="text" name="name" value="<%= user6.getName() %>" placeholder="이름 입력"/></td>
 				</tr>
 				<tr>
 					<td>성별</td>
@@ -80,17 +83,3 @@
 			</table>
 		</form>
 	</body>
-=======
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
->>>>>>> 79ece32404434d2674d069cc7aa4443c52e6117e
-</html>
