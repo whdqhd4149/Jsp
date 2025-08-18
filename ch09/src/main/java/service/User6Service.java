@@ -21,8 +21,8 @@ public class User6Service {
 		dao.insertUser6(dto);		
 	}
 	
-	public User6DTO findById(String user6) {
-		return dao.selectUser6(user6);
+	public User6DTO findById(String name) {
+		return dao.selectUser6(name);
 		
 	}
 	
