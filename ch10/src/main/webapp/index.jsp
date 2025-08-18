@@ -32,22 +32,22 @@
 		<h3>프로젝트 로그와 배포</h3>
 		
 		<h4>Shop</h4>
-		<a href="/ch10/shop/customer/list.do">Customer CRUD</a>
-		<a href="/ch10/shop/product/list.do">Product CRUD</a>
+		<a href="/ch10/shop/customer/list.do">Customer CRUD</a><br/>
+		<a href="/ch10/shop/product/list.do">Product CRUD</a><br/>
 		
 		
 		<h4>College</h4>
-		<a href="/ch10/college/student/list.do">Student CRUD</a>
-		<a href="/ch10/college/course/list.do">Course CRUD</a>
+		<a href="/ch10/college/student/list.do">Student CRUD</a><br/>
+		<a href="/ch10/college/course/list.do">Course CRUD</a><br/>
 		
 		
 		<h4>Bank</h4>
-		<a href="/ch10/bank/account/list.do">Account CRUD</a>
-		<a href="/ch10/bank/customer/list.do">Customer CRUD</a>
+		<a href="/ch10/bank/account/list.do">Account CRUD</a><br/>
+		<a href="/ch10/bank/customer/list.do">Customer CRUD</a><br/>
 		
 		<h4>Library</h4>
-		<a href="/ch10/library/member/list.do">Member CRUD</a>
-		<a href="/ch10/library/book/list.do">Book CRUD</a>
+		<a href="/ch10/library/member/list.do">Member CRUD</a><br/>
+		<a href="/ch10/library/book/list.do">Book CRUD</a><br/>
 		
 		<h4>User1</h4>
 		<a href="/ch10/user1/list.do">user1 CRUD</a><br/>

@@ -8,14 +8,14 @@
 	<body>
 		<h3>User1 수정</h3>
 		
-		<a href="/ch09">처음으로</a>
-		<a href="/ch09/user1/list.do">목록이동</a>
+		<a href="/ch10">처음으로</a>
+		<a href="/ch10/user1/list.do">목록이동</a>
 		
-		<form action="/ch09/user1/modify.do" method="post">
+		<form action="/ch10/user1/modify.do" method="post">
 			<table border="1">
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" name="user_id" readonly value="${user1DTO.user_id}" placeholder="아이디 입력"/></td>
+					<td><input type="text" name="uid" readonly value="${user1DTO.uid}" placeholder="아이디 입력"/></td>
 				</tr>
 				<tr>
 					<td>이름</td>
