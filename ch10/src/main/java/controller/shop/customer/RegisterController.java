@@ -29,7 +29,7 @@ public class RegisterController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB=INF/views/shop/customer/register.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/shop/customer/register.jsp");
 		dispatcher.forward(req, resp);
 	}
 	
