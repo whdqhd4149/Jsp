@@ -29,9 +29,9 @@ public class ProductDAO extends DBHelper{
 		try {
 			conn = getConnection(DBCP);
 			
-			String sql = "INSERT INTO PRODUCT (pname, stock, price, company) VALUES (?,?,?,?)";
+			String sql = "INSERT INTO PRODUCT (pno, pname, stock, price, company) VALUES (product_seq.NEXTVAL, ?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
-			
+			psmt.setInt(1, dto.getPno());
 			psmt.setString(1, dto.getPname());
 			psmt.setInt(2, dto.getStock());
 			psmt.setInt(3, dto.getPrice());
@@ -84,15 +84,15 @@ public class ProductDAO extends DBHelper{
 			conn = getConnection(DBCP);
 			stmt = conn.createStatement();
 			
-			String sql = "SELECT * FROM PRODUCT";
+			String sql = "SELECT pname, stock, price, company FROM PRODUCT";
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
 				ProductDTO dto = new ProductDTO();
 				
 				dto.setPname(rs.getString(1));
-				dto.setStock(rs.getString(2));
-				dto.setPrice(rs.getString(3));
+				dto.setStock(rs.getInt(2));
+				dto.setPrice(rs.getInt(3));
 				dto.setCompany(rs.getString(4));
 				
 				dtoList.add(dto);				

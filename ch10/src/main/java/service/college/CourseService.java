@@ -5,6 +5,8 @@ import java.util.List;
 import dao.college.CourseDAO;
 import dto.college.CourseDTO;
 
+;
+
 public enum CourseService {
 	
 	INSTANCE;
@@ -12,22 +14,23 @@ public enum CourseService {
 	private CourseDAO dao = CourseDAO.getInstance();
 	
 	public void register(CourseDTO dto) {
-		dao.insertCourse(dto);	
+		dao.insertCourse(dto);
 	}
 	
-	public CourseDTO findById(String stdNo) {
-		return dao.selectCourse(stdNo);
+	public CourseDTO findById(String cs_id) {
+		return dao.selectCourse(cs_id);
 	}
 	
-	public List<CourseDTO> findAll(){
-		return dao.selectAllCourse();				
+	public List<CourseDTO> findAll() {
+		return dao.selectAllCourse();
 	}
 	
-	public void modify(CourseDTO dtd) {
-		dao.updateCourse(dtd);
+	public void modify(CourseDTO dto) {
+		dao.updateCourse();
 	}
 	
-	public void delete(String stdNo) {
-		dao.deleteCourse(stdNo);
+	public void delete(String cs_id) {
+		dao.deleteCourse();
 	}
+
 }

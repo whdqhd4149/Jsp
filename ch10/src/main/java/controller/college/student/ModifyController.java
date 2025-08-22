@@ -2,9 +2,6 @@ package controller.college.student;
 
 import java.io.IOException;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import dto.college.StudentDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -14,22 +11,23 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.college.StudentService;
 
-
-@WebServlet("/college/student/register.do")
-public class RegisterController extends HttpServlet{
+@WebServlet("/college/student/modify.do")
+public class ModifyController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 	
-	// 서비스 객체 가져오기
 	private StudentService service = StudentService.INSTANCE;
-	
-	// 로거 생성
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	
+		String stdno = req.getParameter("stdno");
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/college/student/register.jsp");
+		StudentDTO studentDTO = service.findById(stdno);
+		
+		req.setAttribute("student", studentDTO);
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/college/student/modify.jsp");
 		dispatcher.forward(req, resp);
 	}
 	
@@ -43,17 +41,18 @@ public class RegisterController extends HttpServlet{
 		String enr_date = req.getParameter("enr_date");
 		
 		StudentDTO dto = new StudentDTO();
+		
 		dto.setStdno(stdno);
 		dto.setName(name);
 		dto.setBirth(birth);
 		dto.setMajor(major);
 		dto.setEnr_date(enr_date);
 		
-		logger.info(dto.toString());
-		
-		service.register(dto);
+		service.modify(dto);
 		
 		resp.sendRedirect("/ch10/college/student/list.do");
-					
-     }
+		
+		
+	}
+	
 }

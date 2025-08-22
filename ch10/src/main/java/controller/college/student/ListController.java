@@ -3,7 +3,10 @@ package controller.college.student;
 import java.io.IOException;
 import java.util.List;
 
-import dto.shop.CustomerDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import dto.college.StudentDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,7 +14,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.college.StudentService;
-import service.shop.CustomerService;
+
 
 @WebServlet("/college/student/list.do")
 public class ListController extends HttpServlet{
@@ -20,8 +23,10 @@ public class ListController extends HttpServlet{
 	
 	private StudentService service = StudentService.INSTANCE;
 	
+	// 로거 생성
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	
+		
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -29,7 +34,22 @@ public class ListController extends HttpServlet{
 		
 		//req.setAttribute("dtoList", dtoList);
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB=INF/views/college/student/list.jsp");
+		logger.debug("debug here...1");
+		logger.info("info here...1");
+		logger.warn("warn here...1");
+		logger.error("error here...1");
+		
+		List<StudentDTO> dtoList = service.findAll();
+		
+		logger.debug("debug here...2 : " + dtoList);
+		logger.info("info here...2 : " + dtoList);
+		logger.warn("warn here...2 : " + dtoList);
+		logger.error("error here...2 : " + dtoList);
+		
+		req.setAttribute("dtoList", dtoList);
+		
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/college/student/list.jsp");
 		dispatcher.forward(req, resp);
 	}
 	

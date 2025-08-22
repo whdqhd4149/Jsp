@@ -2,17 +2,17 @@ package dto.college;
 
 public class StudentDTO {
 	
-	private String stdNo;
+	private String stdno;
 	private String name;
 	private String birth;
 	private String major;
 	private String enr_date;
 	
-	public String getStdNo() {
-		return stdNo;
+	public String getStdno() {
+		return stdno;
 	}
-	public void setStdNo(String stdNo) {
-		this.stdNo = stdNo;
+	public void setStdno(String stdno) {
+		this.stdno = stdno;
 	}
 	public String getName() {
 		return name;
@@ -41,9 +41,10 @@ public class StudentDTO {
 	
 	@Override
 	public String toString() {
-		return "StudentDTO [stdNo=" + stdNo + ", name=" + name + ", birth=" + birth + ", major=" + major + ", enr_date="
+		return "StudentDTO [stdno=" + stdno + ", name=" + name + ", birth=" + birth + ", major=" + major + ", enr_date="
 				+ enr_date + "]";
 	}
+	
 
 	
 	

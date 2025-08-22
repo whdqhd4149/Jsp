@@ -2,45 +2,45 @@ package dto.college;
 
 public class CourseDTO {
 	
-	private String stdNo;
-	private String name;
-	private String birth;
-	private String major;
+	private String cs_id;
+	private String cs_name;
+	private int cs_credit;
+	private String cs_dept;
 	
-	public String getStdNo() {
-		return stdNo;
+	public String getCs_id() {
+		return cs_id;
 	}
-	public void setStdNo(String stdNo) {
-		this.stdNo = stdNo;
+	public void setCs_id(String cs_id) {
+		this.cs_id = cs_id;
 	}
-	public String getName() {
-		return name;
+	public String getCs_name() {
+		return cs_name;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setCs_name(String cs_name) {
+		this.cs_name = cs_name;
 	}
-	public String getBirth() {
-		return birth;
+	public int getCs_credit() {
+		return cs_credit;
 	}
-	public void setBirth(String birth) {
-		this.birth = birth;
+	public void setCs_credit(int cs_credit) {
+		this.cs_credit = cs_credit;
 	}
-	public String getMajor() {
-		return major;
+	public void setCs_credit(String cs_credit) {
+		
+		if(cs_credit != null) {
+			this.cs_credit = Integer.parseInt(cs_credit);
+		}
 	}
-	public void setMajor(String major) {
-		this.major = major;
+	public String getCs_dept() {
+		return cs_dept;
+	}
+	public void setCs_dept(String cs_dept) {
+		this.cs_dept = cs_dept;
 	}
 	
 	@Override
 	public String toString() {
-		return "CourseDTO [stdNo=" + stdNo + ", name=" + name + ", birth=" + birth + ", major=" + major + "]";
+		return "CourseDTO [cs_id=" + cs_id + ", cs_name=" + cs_name + ", cs_credit=" + cs_credit + ", cs_dept="
+				+ cs_dept + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
 }

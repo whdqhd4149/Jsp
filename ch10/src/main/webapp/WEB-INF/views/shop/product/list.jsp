@@ -14,7 +14,6 @@
 		
 		<table border="1">
 			<tr>
-				
 				<th>제품명</th>
 				<th>재고량</th>
 				<th>가격</th>

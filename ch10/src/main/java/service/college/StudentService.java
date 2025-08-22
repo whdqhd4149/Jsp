@@ -17,8 +17,8 @@ public enum StudentService {
 		dao.insertStudent(dto);
 	}
 	
-	public StudentDTO findById(String stdNo) {
-		return dao.selectStudent(stdNo);
+	public StudentDTO findById(String stdno) {
+		return dao.selectStudent(stdno);
 	}
 	
 	public List<StudentDTO> findAll(){
@@ -29,8 +29,8 @@ public enum StudentService {
 		dao.updateStudent(dto);
 	}
 	
-	public void delete(String stdNo) {
-		dao.deleteStudent(stdNo);
+	public void delete(String stdno) {
+		dao.deleteStudent(stdno);
 	}
 
 }

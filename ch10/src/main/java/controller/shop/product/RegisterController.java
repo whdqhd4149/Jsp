@@ -38,7 +38,7 @@ public class RegisterController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		
+		String pno = req.getParameter("pno");
 		String pname = req.getParameter("pname");
 		String stock = req.getParameter("stock");
 		String price = req.getParameter("price");
@@ -46,6 +46,7 @@ public class RegisterController extends HttpServlet{
 		
 		ProductDTO dto = new ProductDTO();
 		
+		dto.setPno(pno);
 		dto.setPname(pname);
 		dto.setStock(stock);
 		dto.setPrice(price);
