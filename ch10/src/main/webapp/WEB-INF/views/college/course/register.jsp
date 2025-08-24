@@ -26,7 +26,7 @@
 					<td><input type="number" name="cs_credit" placeholder="학년 입력"/></td>
 				</tr>		
 			    <tr>
-					<td>학과</td>
+					<td>학점</td>
 					<td><input type="text" name="cs_dept" placeholder="학과 입력"/></td>
 				</tr>
 				<tr>

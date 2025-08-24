@@ -12,6 +12,7 @@ import util.DBHelper;
 public class StudentDAO extends DBHelper{
 	
 	private static final StudentDAO INSTANCE = new StudentDAO();
+	
 	public static StudentDAO getInstance() {
 		return INSTANCE;
 	}
@@ -22,7 +23,7 @@ public class StudentDAO extends DBHelper{
 	// 로거 생성
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	private String Stdno;
+	
 	
 	public void insertStudent(StudentDTO dto) {
 		
@@ -45,7 +46,7 @@ public class StudentDAO extends DBHelper{
 		}			
 	}
 	
-	public StudentDTO selectStudent(String stdNo) {
+	public StudentDTO selectStudent(String stdno) {
 		
 		StudentDTO dto = null;
 		
@@ -54,7 +55,7 @@ public class StudentDAO extends DBHelper{
 				
 			String sql = "SELECT * FROM STUDENT WHERE STDNO=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, Stdno);
+			psmt.setString(1, stdno);
 			
 			rs = psmt.executeQuery();
 			

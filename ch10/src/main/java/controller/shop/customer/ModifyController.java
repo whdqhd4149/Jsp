@@ -1,56 +1,57 @@
-package controller.bank.customer;
+package controller.shop.customer;
 
 import java.io.IOException;
 
-import dto.bank.CustomerDTO;
+import dto.shop.CustomerDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import service.bank.CustomerService;
+import service.shop.CustomerService;
 
-@WebServlet("/bank/customer/modify.do")
+@WebServlet("/shop/customer/modify.do")
 public class ModifyController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 	
 	private CustomerService service = CustomerService.INSTANCE;
 	
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String c_id = req.getParameter("c_id");
+		String cid = req.getParameter("cid");
 		
-		CustomerDTO customerDTO = service.findById(c_id);
+		CustomerDTO customerDTO = service.findById(cid);
 		
 		req.setAttribute("customerDTO", customerDTO);
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/bank/customer/modify.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/shop/customer/modify.jsp");
 		dispatcher.forward(req, resp);
 	}
 	
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
-		String c_id = req.getParameter("c_id");
-		String c_name = req.getParameter("c_name");
-		String c_type = req.getParameter("c_type");
-		String c_hp = req.getParameter("c_hp");
-		String c_addr = req.getParameter("c_addr");
+		
+		String cid = req.getParameter("cid");
+		String name = req.getParameter("name");
+		String hp = req.getParameter("hp");
+		String address = req.getParameter("address");
+		String rdate = req.getParameter("rdate");
 		
 		CustomerDTO dto = new CustomerDTO();
-		dto.setC_id(c_id);
-		dto.setC_name(c_name);
-		dto.setC_type(c_type);
-		dto.setC_hp(c_hp);
-		dto.setC_addr(c_addr);
+		dto.setCid(cid);
+		dto.setName(name);
+		dto.setHp(hp);
+		dto.setAddress(address);
+		dto.setRdate(rdate);
 		
 		service.modify(dto);
 		
-		resp.sendRedirect("/ch10/bank/customer/list.do");
+		resp.sendRedirect("/ch10/shop/customer/list.do");
 	}
 
 }

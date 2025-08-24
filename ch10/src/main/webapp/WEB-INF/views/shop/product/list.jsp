@@ -14,21 +14,22 @@
 		
 		<table border="1">
 			<tr>
+				<th>제품번호</th>
 				<th>제품명</th>
 				<th>재고량</th>
 				<th>가격</th>
 				<th>제조회사</th>
 				<th>관리</th>
 			</tr>
-			<c:forEach var="product" items="${dtoList}">			
+			<c:forEach var="dto" items="${dtoList}">			
 			<tr>
-				
-				<td>${product.pname}</td>
-				<td>${product.stock}</td>
-				<td>${product.price}</td>
-				<td>${product.company}</td>
+				<td>${dto.pno}</td>
+				<td>${dto.pname}</td>
+				<td>${dto.stock}</td>
+				<td>${dto.price}</td>
+				<td>${dto.company}</td>
 				<td>			
-					<a href="">수정</a>		
+					<a href="/ch10/shop/product/modify.do?pname=${dto.pname}">수정</a>		
 					<a href="">삭제</a>
 				</td>				
 			</tr>

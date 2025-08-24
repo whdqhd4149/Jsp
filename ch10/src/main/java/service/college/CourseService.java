@@ -26,7 +26,7 @@ public enum CourseService {
 	}
 	
 	public void modify(CourseDTO dto) {
-		dao.updateCourse();
+		dao.updateCourse(dto);
 	}
 	
 	public void delete(String cs_id) {

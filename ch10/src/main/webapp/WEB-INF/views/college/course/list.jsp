@@ -16,7 +16,7 @@
 			<tr>
 				<th>아이디</th>
 				<th>과목</th>
-				<th>학년</th>
+				<th>학점</th>
 				<th>학과</th>
 			</tr>
 			<c:forEach var="course" items="${dtoList}">
@@ -26,7 +26,7 @@
 				<td>${course.cs_credit}</td>
 				<td>${course.cs_dept}</td>
 				<td>
-					<a href="#">수정</a>
+					<a href="/ch10/college/course/modify.do?cs_id=${course.cs_id}">수정</a>
 					<a href="#">삭제</a>
 				</td>
 			</tr>

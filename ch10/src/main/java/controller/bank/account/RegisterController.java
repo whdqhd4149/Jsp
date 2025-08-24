@@ -1,7 +1,6 @@
 package controller.bank.account;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,8 +14,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.bank.AccountService;
 
-@WebServlet("/bank/account/list.do")
-public class ListController extends HttpServlet{
+@WebServlet("/bank/account/register.do")
+public class RegisterController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -26,28 +25,35 @@ public class ListController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		logger.debug("debug here...1");
-		logger.info("info here...1");
-		logger.warn("warn here...1");
-		logger.error("error here...1");
-		
-		List<AccountDTO> dtoList = service.findAll();
-		
-		logger.debug("debug here...2 : " + dtoList);
-		logger.info("info here...2 : " + dtoList);
-		logger.warn("warn here...2 : " + dtoList);
-		logger.error("error here...2 : " + dtoList);
-		
-		req.setAttribute("dtoList", dtoList);
-		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/bank/account/list.jsp");
+	
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/bank/account/register.jsp");
 		dispatcher.forward(req, resp);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		String acc_no = req.getParameter("acc_no");
+		String acc_type = req.getParameter("acc_type");
+		String acc_name = req.getParameter("acc_name");
+		String acc_cid = req.getParameter("acc_cid");
+		String acc_balance = req.getParameter("acc_balance");
+		String acc_date = req.getParameter("acc_date");
+		
+		AccountDTO dto = new AccountDTO();
+		dto.setAcc_no(acc_no);
+		dto.setAcc_type(acc_type);
+		dto.setAcc_name(acc_name);
+		dto.setAcc_cid(acc_cid);
+		dto.setAcc_balance(acc_balance);
+		dto.setAcc_date(acc_date);
+		
+		logger.info(dto.toString());
+		
+		service.register(dto);
+		
+		resp.sendRedirect("/ch10/bank/account/list.do");
 	}
+	
 
 }

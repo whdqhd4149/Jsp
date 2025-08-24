@@ -14,22 +14,22 @@
 		<form action="/ch10/bank/customer/register.do" method="post">
 			<table border="1">
 				<tr>
-					<td>아이디</td>
+					<td>고객아이디</td>
 					<td><input type="text" name="c_id" placeholder="아이디 입력"/></td>
 				</tr>
-					<tr>
-					<td>이름</td>
+				<tr>
+					<td>고객명</td>
 					<td><input type="text" name="c_name" placeholder="이름 입력"/></td>
 				</tr>
-					<tr>
-					<td>타입</td>
+				<tr>
+					<td>고객구분</td>
 					<td><input type="number" name="c_type" placeholder="타입 입력"/></td>
 				</tr>
-					<tr>
+				<tr>
 					<td>휴대폰</td>
 					<td><input type="text" name="c_hp" placeholder="휴대폰 입력(-포함)"/></td>
 				</tr>
-					<tr>
+				<tr>
 					<td>주소</td>
 					<td><input type="text" name="c_addr" placeholder="주소 입력"/></td>
 				</tr>

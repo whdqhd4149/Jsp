@@ -112,6 +112,25 @@ public class CustomerDAO extends DBHelper{
 	
 	public void updateCustomer(CustomerDTO dto) {
 		
+		try {
+			conn = getConnection(DBCP);
+			
+			String sql = "UPDATE CUSTOMER SET NAME=?, HP=?, ADDRESS=?, RDATE=? WHERE CID=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getName());
+			psmt.setString(2, dto.getHp());
+			psmt.setString(3, dto.getAddress());
+			psmt.setString(4, dto.getRdate());
+			psmt.setString(5, dto.getCid());
+			psmt.executeUpdate();
+			
+			closeAll();
+			
+		}catch (Exception e) {
+			// e.printStackTrace();
+			logger.error(e.getMessage());
+		}
+		
 	}
 	
 	public void deleteCustomer(String cid) {

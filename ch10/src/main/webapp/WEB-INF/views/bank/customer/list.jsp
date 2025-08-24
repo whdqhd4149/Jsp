@@ -21,7 +21,7 @@
 				<th>주소</th>
 				<th>관리</th>
 			</tr>
-			<c:forEach var="customer" items="${dtoList}">
+			<c:forEach var="dto" items="${dtoList}">
 			<tr>
 				<td>${dto.c_id}</td>
 				<td>${dto.c_name}</td>
@@ -29,7 +29,7 @@
 				<td>${dto.c_hp}</td>
 				<td>${dto.c_addr}</td>
 				<td>
-					<a href="#">수정</a>
+					<a href="/ch10/bank/customer/modify.do?c_id=${dto.c_id}">수정</a>
 					<a href="#">삭제</a>
 				</td>
 			</tr>

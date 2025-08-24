@@ -13,7 +13,10 @@
 		
 		<form action="/ch10/shop/product/register.do" method="post">
 			<table border="1">
-				
+				<tr>
+					<td>제품번호</td>
+					<td><input type="number" name="pno" placeholder="제품번호 입력"/></td>
+				</tr>
 				<tr>
 					<td>제품명</td>
 					<td><input type="text" name="pname" placeholder="제품명 입력"/></td>
@@ -25,8 +28,7 @@
 				<tr>
 					<td>가격</td>
 					<td><input type="number" name="price" placeholder="가격 입력"/></td>
-				</tr>
-				<tr>
+				</tr>				
 				<tr>
 					<td>제조회사</td>
 					<td><input type="text" name="company" placeholder="제조회사 입력"/></td>

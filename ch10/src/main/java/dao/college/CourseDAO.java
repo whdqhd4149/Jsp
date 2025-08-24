@@ -102,7 +102,27 @@ public class CourseDAO extends DBHelper{
 		
 	}
 	
-	public void updateCourse() {}
+	public void updateCourse(CourseDTO dto) {
+		
+		try {
+			conn = getConnection(DBCP);
+			
+			String sql = "UPDATE COURSE SET cs_name=?, cs_credit=?, cs_dept=? WHERE cs_id=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getCs_name());
+			psmt.setInt(2, dto.getCs_credit());
+			psmt.setString(3, dto.getCs_dept());
+			psmt.setString(4, dto.getCs_id());
+			
+			psmt.executeUpdate();
+			
+			closeAll();
+			
+		}catch (Exception e) {
+			//e.printStackTrace();
+			logger.error(e.getMessage());
+		}
+	}
 	
 	public void deleteCourse() {}
 	

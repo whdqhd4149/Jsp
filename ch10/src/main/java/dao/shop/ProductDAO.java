@@ -29,13 +29,13 @@ public class ProductDAO extends DBHelper{
 		try {
 			conn = getConnection(DBCP);
 			
-			String sql = "INSERT INTO PRODUCT (pno, pname, stock, price, company) VALUES (product_seq.NEXTVAL, ?,?,?,?)";
+			String sql = "INSERT INTO PRODUCT VALUES (?, ?, ? , ?, ?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, dto.getPno());
-			psmt.setString(1, dto.getPname());
-			psmt.setInt(2, dto.getStock());
-			psmt.setInt(3, dto.getPrice());
-			psmt.setString(4, dto.getCompany());
+			psmt.setString(2, dto.getPname());
+			psmt.setInt(3, dto.getStock());
+			psmt.setInt(4, dto.getPrice());
+			psmt.setString(5, dto.getCompany());
 			psmt.executeUpdate();
 			closeAll();
 					
@@ -61,11 +61,11 @@ public class ProductDAO extends DBHelper{
 			
 			if(rs.next()) {
 				dto = new ProductDTO();
-				
-				dto.setPname(rs.getString(1));
-				dto.setStock(rs.getString(2));
-				dto.setPrice(rs.getString(3));
-				dto.setCompany(rs.getString(4));			
+				dto.setPno(rs.getString(1));
+				dto.setPname(rs.getString(2));
+				dto.setStock(rs.getString(3));
+				dto.setPrice(rs.getString(4));
+				dto.setCompany(rs.getString(5));			
 			}
 			closeAll();
 			
@@ -84,16 +84,16 @@ public class ProductDAO extends DBHelper{
 			conn = getConnection(DBCP);
 			stmt = conn.createStatement();
 			
-			String sql = "SELECT pname, stock, price, company FROM PRODUCT";
+			String sql = "SELECT * FROM PRODUCT";
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
 				ProductDTO dto = new ProductDTO();
-				
-				dto.setPname(rs.getString(1));
-				dto.setStock(rs.getInt(2));
-				dto.setPrice(rs.getInt(3));
-				dto.setCompany(rs.getString(4));
+				dto.setPno(rs.getInt(1));
+				dto.setPname(rs.getString(2));
+				dto.setStock(rs.getInt(3));
+				dto.setPrice(rs.getInt(4));
+				dto.setCompany(rs.getString(5));
 				
 				dtoList.add(dto);				
 			}
@@ -109,12 +109,29 @@ public class ProductDAO extends DBHelper{
 	
 	public void updateProduct(ProductDTO dto) {
 		
+		try {
+			conn = getConnection(DBCP);
+			
+			String sql = "UPDATE PRODUCT SET PNO=?, STOCK=?, PRICE=?, COMPANY=? WHERE PNAME=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, dto.getPno());
+			psmt.setInt(2, dto.getStock());
+			psmt.setInt(3, dto.getPrice());
+			psmt.setString(4, dto.getCompany());
+			psmt.setString(5, dto.getPname());
+			psmt.executeUpdate();
+			
+			closeAll();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	public void deleteProduct(String pno) {
 		
 	}
 
-	
 }
 

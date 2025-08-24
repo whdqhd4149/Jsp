@@ -27,10 +27,10 @@ public class CustomerDTO {
 		this.c_type = c_type;
 	}
 	public void setC_type(String c_type) {
-		
+	
 		if(c_type != null) {
-			this.c_type = Integer.parseInt(c_type);
-		}
+			this.c_type = Integer.parseInt(c_type);		
+		}	
 	}
 	public String getC_hp() {
 		return c_hp;

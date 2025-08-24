@@ -21,15 +21,15 @@
 				<th>등록일</th>
 				<th>관리</th>
 			</tr>
-			<c:forEach var="customer" items="${dtoList}">			
+			<c:forEach var="dto" items="${dtoList}">			
 			<tr>
-				<td>${customer.cid}</td>
-				<td>${customer.name}</td>
-				<td>${customer.hp}</td>
-				<td>${customer.address}</td>
-				<td>${customer.rdate}</td>
+				<td>${dto.cid}</td>
+				<td>${dto.name}</td>
+				<td>${dto.hp}</td>
+				<td>${dto.address}</td>
+				<td>${dto.rdate}</td>
 				<td>			
-					<a href="">수정</a>		
+					<a href="/ch10/shop/customer/modify.do?cid=${dto.cid}">수정</a>		
 					<a href="">삭제</a>
 				</td>				
 			</tr>

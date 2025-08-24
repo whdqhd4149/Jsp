@@ -11,6 +11,8 @@ public enum CustomerService {
 	
 	private CustomerDAO dao = CustomerDAO.getInstance();
 	
+	
+	
 	public void register(CustomerDTO dto) {
 		dao.insertCustomer(dto);
 	}
