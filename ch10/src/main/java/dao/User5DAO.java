@@ -38,8 +38,31 @@ public class User5DAO extends DBHelper{
 		
 	}
 	
-	public User5DTO selectUser5(String name) {
-		return null;
+	public User5DTO selectUser5(String seq) {
+		
+		User5DTO dto = null;
+	
+		try {
+			conn = getConnection(DBCP);
+			
+			String sql = "SELECT * FROM USER5 WHERE seq=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, seq);
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				dto = new User5DTO();
+				dto.setSeq(rs.getInt(1));
+				dto.setName(rs.getString(2));
+				dto.setGender(rs.getString(3));
+				dto.setAge(rs.getInt(4));
+				dto.setAddr(rs.getString(5));				
+			}
+			closeAll();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dto;
 	}
 	
 	public List<User5DTO> selectAllUser5() {
@@ -71,6 +94,24 @@ public class User5DAO extends DBHelper{
 	}
 	
 	public void updateUser5(User5DTO dto) {
+		
+		try {
+			conn = getConnection(DBCP);
+			
+			String sql = "UPDATE USER5 SET name=?, gender=?, age=?, addr=? WHERE seq=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getName());
+			psmt.setString(2, dto.getGender());
+			psmt.setInt(3, dto.getAge());
+			psmt.setString(4, dto.getAddr());
+			psmt.setInt(5, dto.getSeq());
+			psmt.executeUpdate();
+			
+			closeAll();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 	}
 	

@@ -47,6 +47,13 @@ public class User5DTO {
 	public void setSeq(int seq) {
 		this.seq = seq;
 	}
+	public void setSeq(String seq) {
+		if(seq != null) {
+			this.seq = Integer.parseInt(seq);
+		}
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "User5DTO [name=" + name + ", gender=" + gender + ", age=" + age + ", addr=" + addr + "]";

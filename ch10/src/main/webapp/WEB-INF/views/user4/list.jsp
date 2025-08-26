@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>user4::list</title>
+		<title>User4::list</title>
 	</head>
 	<body>
 		<h3>MySQL User4 목록</h3>
@@ -31,7 +31,7 @@
 				<td>${dto.hp}</td>
 				<td>${dto.addr}</td>
 				<td>
-					<a href="#">수정</a>
+					<a href="/ch10/user4/modify.do?uid=${dto.uid}">수정</a>
 					<a href="#">삭제</a>
 				</td>
 			</tr>

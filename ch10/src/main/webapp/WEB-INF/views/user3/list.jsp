@@ -29,7 +29,7 @@
 				<td>${dto.hp}</td>
 				<td>${dto.addr}</td>
 				<td>
-					<a href="#">수정</a>
+					<a href="/ch10/user3/modify.do?=${dto.uid}">수정</a>
 					<a href="#">삭제</a>
 				</td>
 			</tr>

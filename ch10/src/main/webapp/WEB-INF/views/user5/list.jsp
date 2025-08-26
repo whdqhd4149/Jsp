@@ -13,7 +13,7 @@
 		
 		<table border="1">
 			<tr>
-				<th>seq</th>
+				
 				<th>이름</th>
 				<th>성별</th>
 				<th>나이</th>
@@ -22,13 +22,13 @@
 			</tr>
 			<c:forEach var="dto" items="${dtoList}">
 			<tr>
-				<td>${dto.seq}</td>
+				
 				<td>${dto.name}</td>
 				<td>${dto.gender}</td>
 				<td>${dto.age}</td>
 				<td>${dto.addr}</td>
 				<td>
-					<a href="#">수정</a>
+					<a href="/ch10/user5/modify.do?seq=${dto.seq}">수정</a>
 					<a href="#">삭제</a>
 				</td>
 			</tr>

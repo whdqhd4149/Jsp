@@ -38,7 +38,32 @@ public class User2DAO extends DBHelper{
 	}
 	
 	public User2DTO selectUser2(String uid) {
-		return null;
+		
+		User2DTO dto = null;
+		
+		try {
+			conn = getConnection(DBCP);
+			
+			String sql = "SELECT * FROM USER2 WHERE uid=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, uid);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				dto = new User2DTO();
+				dto.setUid(rs.getString(1));
+				dto.setName(rs.getString(2));
+				dto.setBirth(rs.getString(3));
+				dto.setAddr(rs.getString(4));				
+			}
+			closeAll();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return dto;
 	}
 	
 	public List<User2DTO> selectAllUser2(){
@@ -67,9 +92,28 @@ public class User2DAO extends DBHelper{
 		return dtoList;		
 	}
 	
-	
-	
-	public void updateUser2(User2DTO dto) {}
+	public void updateUser2(User2DTO dto) {
+		
+		try {
+			conn = getConnection(DBCP);
+			
+			String sql = "UPDATE USER2 SET name=?, birth=?, addr=? WHERE uid=?";
+			
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getName());
+			psmt.setString(2, dto.getBirth());
+			psmt.setString(3, dto.getAddr());
+			psmt.setString(4, dto.getUid());
+			psmt.executeUpdate();
+			
+			closeAll();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
 	public void deleteUSer2(String uid) {}
 
 }

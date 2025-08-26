@@ -15,8 +15,8 @@ public enum User5Service {
 		dao.insertUser5(dto);
 	}
 	
-	public User5DTO findById(String name) {
-		return dao.selectUser5(name);
+	public User5DTO findById(String seq) {
+		return dao.selectUser5(seq);
 	}
 	
 	public List<User5DTO> findAll(){

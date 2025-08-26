@@ -4,34 +4,36 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>user2::list</title>
+		<title>Library/Member::list</title>
 	</head>
 	<body>
-		<h3>MYSQL User2 목록</h3>
+		<h3>Library/Member 목록</h3>
 		
 		<a href="/ch10">처음으로</a>
-		<a href="/ch10/user2/register.do">등록하기</a>
+		<a href="/ch10/library/member/register.do">등록하기</a>
 		
 		<table border="1">
 			<tr>
-				<th>아이디</th>
+				<th>회원번호</th>
 				<th>이름</th>
-				<th>생년월일</th>
 				<th>주소</th>
+				<th>휴대폰</th>
+				<th>가입일</th>
 				<th>관리</th>
 			</tr>
 			<c:forEach var="dto" items="${dtoList}">
 			<tr>
-				<td>${dto.uid}</td>
+				<td>${dto.member_id}</td>
 				<td>${dto.name}</td>
-				<td>${dto.birth}</td>
-				<td>${dto.addr}</td>
+				<td>${dto.address}</td>
+				<td>${dto.hp}</td>
+				<td>${dto.join_date}</td>
 				<td>
-					<a href="/ch10/user2/modify.do?uid=${dto.uid}">수정</a>
-					<a href="#">삭제</a>
+					<a href="/ch10/library/member/modify.do?member_id=${dto.member_id}">수정</a>
+					<a></a>
 				</td>
 			</tr>
-			</c:forEach>
+		 </c:forEach>
 		</table>
 	</body>
 </html>

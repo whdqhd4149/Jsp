@@ -1,5 +1,6 @@
 package dao;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +42,33 @@ public class User3DAO extends DBHelper{
 	}
 	
 	public User3DTO selectUser3(String uid) {
-		return null;
+		
+		User3DTO dto = null;
+		
+		try {
+			conn = getConnection(DBCP);
+			
+			String sql = "SELECT * FROM USER3 WHERE uid=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, uid);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				dto = new User3DTO();
+				dto.setUid(rs.getString(1));
+				dto.setName(rs.getString(2));
+				dto.setBirth(rs.getString(3));
+				dto.setHp(rs.getString(4));
+				dto.setAddr(rs.getString(5));
+				
+			}
+			closeAll();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dto;
 		
 	}
 	
@@ -73,6 +100,25 @@ public class User3DAO extends DBHelper{
 	}
 	
 	public void updateUser3(User3DTO dto) {
+		
+		try {
+			conn = getConnection(DBCP);
+			
+			String sql = "UPDATE USER3 SET name=?, birth=?, hp=?, addr=? where uid=?";
+			
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getName());
+			psmt.setString(2, dto.getBirth());
+			psmt.setString(3, dto.getHp());
+			psmt.setString(4, dto.getAddr());
+			psmt.setString(5, dto.getUid());
+			psmt.executeUpdate();
+			
+			closeAll();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 	}
 	

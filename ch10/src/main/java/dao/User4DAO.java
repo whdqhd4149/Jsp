@@ -40,7 +40,36 @@ public class User4DAO extends DBHelper{
 	}
 	
 	public User4DTO selectUser4(String uid) {
-		return null;
+		
+		User4DTO dto = null;
+		
+		try {
+			conn = getConnection(DBCP);
+			
+			String sql = "SELECT * FROM USER4 WHERE uid=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, uid);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				dto = new User4DTO();
+				dto.setUid(rs.getString(1));
+				dto.setName(rs.getString(2));
+				dto.setGender(rs.getString(3));
+				dto.setAge(rs.getInt(4));
+				dto.setHp(rs.getString(5));
+				dto.setAddr(rs.getString(6));				
+			}
+			closeAll();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return dto;
 	}
 	
 	public List<User4DTO> selectAlluser4(){
@@ -73,6 +102,27 @@ public class User4DAO extends DBHelper{
 	
 	public void updateUser4(User4DTO dto) {
 		
+		try{
+			conn = getConnection(DBCP);
+			
+			String sql = "UPDATE USER4 SET name=?, gender=?, age=?, hp=?, addr=? WHERE uid=?";
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, dto.getName());
+			psmt.setString(2, dto.getGender());
+			psmt.setInt(3, dto.getAge());
+			psmt.setString(4, dto.getHp());
+			psmt.setString(5, dto.getAddr());
+			psmt.setString(6, dto.getUid());
+			
+			psmt.executeUpdate();
+			
+			closeAll();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	
 	}
 	
 	public void deleteUser4(String uid) {
