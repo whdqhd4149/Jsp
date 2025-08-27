@@ -48,6 +48,8 @@ public class RegisterController extends HttpServlet{
 		dto.setHp(hp);
 		dto.setJoin_date(join_date);
 		
+		logger.info(dto.toString());
+		
 		service.register(dto);
 		
 		resp.sendRedirect("/ch10/library/member/list.do");

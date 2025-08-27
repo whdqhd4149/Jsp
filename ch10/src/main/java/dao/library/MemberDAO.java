@@ -111,11 +111,12 @@ public class MemberDAO extends DBHelper{
 			
 			String sql = "UPDATE MEMBER SET name=?, address=?, hp=?, join_date=? WHERE member_id=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, dto.getMember_id());
-			psmt.setString(2, dto.getName());
-			psmt.setString(3, dto.getAddress());
-			psmt.setString(4, dto.getHp());
-			psmt.setString(5, dto.getJoin_date());
+			
+			psmt.setString(1, dto.getName());
+			psmt.setString(2, dto.getAddress());
+			psmt.setString(3, dto.getHp());
+			psmt.setString(4, dto.getJoin_date());
+			psmt.setInt(5, dto.getMember_id());
 			psmt.executeUpdate();
 			
 			closeAll();
