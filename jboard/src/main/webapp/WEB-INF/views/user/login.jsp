@@ -22,9 +22,9 @@
                 아직 회원이 아니시면 회원으로 가입하세요.
             </p>
             <div style="text-align: right;">
-                <a href="../find/userId.html">아이디 |</a>
-                <a href="../find/password.html">비밀번호찾기 |</a>
-                <a href="./terms.html">회원가입</a>
+                <a href="/jboard/find/userId.do">아이디 |</a>
+                <a href="/jboard/find/password.do">비밀번호찾기 |</a>
+                <a href="/jboard/user/terms.do">회원가입</a>
             </div>                    
         </div>
     </section>

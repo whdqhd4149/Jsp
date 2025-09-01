@@ -1,4 +1,4 @@
-package util;
+package jboard.util;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,7 +18,7 @@ public class DBHelper {
 	protected Statement stmt = null;
 	protected ResultSet rs = null;
 	
-	public Connection getConnection(String dbcp) throws NamingException, SQLException {		
+	public Connection getConnection() throws NamingException, SQLException {		
 		Context ctx = (Context) new InitialContext().lookup("java:comp/env");
 		DataSource ds = (DataSource) ctx.lookup("jdbc/jboard");		
 		return ds.getConnection();		

@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/find/changePassword.do")
+@WebServlet("/find/resultUserId.do")
 public class ResultUserIdController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
@@ -17,7 +17,7 @@ public class ResultUserIdController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/find/changePassword.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/find/resultUserId.jsp");
 		dispatcher.forward(req, resp);
 	}
 	

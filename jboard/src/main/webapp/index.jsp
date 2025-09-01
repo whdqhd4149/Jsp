@@ -17,24 +17,24 @@
     
     <h4>주요기능</h4>
     <p>
-        <a href="./user/login.html">로그인</a><br>
-        <a href="./user/terms.html">약관</a><br>
-        <a href="./user/register.html">회원가입</a><br>
-        <a href="./user/info.html">회원정보</a><br>
+        <a href="./user/login.do">로그인</a><br>
+        <a href="./user/terms.do">약관</a><br>
+        <a href="./user/register.do">회원가입</a><br>
+        <a href="./user/info.do">회원정보</a><br>
     </p>
     
     <p>
-        <a href="./find/userId.html">아이디찾기</a><br>
-        <a href="./find/resultUserId.html">아이디결과</a><br>
-        <a href="./find/password.html">비밀번호찾기</a><br>
-        <a href="./find/changePassword.html">비밀번호변경</a><br>
+        <a href="./find/userId.do">아이디찾기</a><br>
+        <a href="./find/resultUserId.do">아이디결과</a><br>
+        <a href="./find/password.do">비밀번호찾기</a><br>
+        <a href="./find/changePassword.do">비밀번호변경</a><br>
     </p>
 
     <p>
-        <a href="./article/list.html">글목록</a><br>
-        <a href="./article/write.html">글쓰기</a><br>
-        <a href="./article/view.html">글보기</a><br>
-        <a href="./article/modify.html">글수정</a><br>
+        <a href="./article/list.do">글목록</a><br>
+        <a href="./article/write.do">글쓰기</a><br>
+        <a href="./article/view.do">글보기</a><br>
+        <a href="./article/modify.do">글수정</a><br>
     </p>
 
     <h4>기술스택</h4>
