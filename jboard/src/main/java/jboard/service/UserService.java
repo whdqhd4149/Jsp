@@ -19,9 +19,10 @@ public enum UserService {
 	
 	INSTANCE;
 	
+	private UserDAO dao = UserDAO.getInstance();
 	private final String SENDER = "whdqhd4149@gmail.com";
 	
-	private UserDAO dao = UserDAO.getInstance();
+	
 	
 	public String sendEmailCode(String email) {
 		// Gmail SMTP 서버 설정
@@ -77,8 +78,8 @@ public enum UserService {
 	public int getUserCount(String col, String value) {
 		return dao.selectCount(col, value);
 	}
-	public UserDTO findById(String usid) {
-		return dao.select(usid);
+	public UserDTO findByPass(UserDTO dto) {
+		return dao.select(dto);
 	}
 	public List<UserDTO> findAll() {
 		return dao.selectAll();
